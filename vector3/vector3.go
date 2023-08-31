@@ -15,6 +15,12 @@ func (v Vector3) Len() float32 {
 	return float32(math.Sqrt(float64(v.X*v.X + v.Y*v.Y + v.Z*v.Z)))
 }
 
+func (v *Vector3) Set(x float32, y float32, z float32) {
+	v.X = x
+	v.Y = y
+	v.Z = z
+}
+
 func (v Vector3) String() string {
 	return fmt.Sprintf("(%f,%f,%f)", v.X, v.Y, v.Z)
 }

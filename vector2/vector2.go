@@ -36,6 +36,11 @@ func (v Vector2) DistanceToSqrt(x float32, y float32) float32 {
 	return dx*dx + dy*dy
 }
 
+func (v *Vector2) Set(x float32, y float32) {
+	v.X = x
+	v.Y = y
+}
+
 func (v Vector2) Add(v2 Vector2) Vector2 {
 	return Vector2{
 		X: v.X + v2.X,
