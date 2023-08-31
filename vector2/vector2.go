@@ -99,14 +99,23 @@ func (v Vector2) WrapIfNecessary(maxValue float32) Vector2 {
 	newY := v.Y
 
 	if newX < 0 {
-		newX = maxValue + newX
+		for newX < 0 {
+			newX += maxValue
+		}
 	} else if newX >= maxValue {
-		newX = newX - maxValue
+		for newX >= maxValue {
+			newX -= maxValue
+		}
 	}
+
 	if newY < 0 {
-		newY = maxValue + newY
+		for newY < 0 {
+			newY += maxValue
+		}
 	} else if newY >= maxValue {
-		newY = newY - maxValue
+		for newY >= maxValue {
+			newY -= maxValue
+		}
 	}
 
 	if newX != v.X || newY != v.Y {
